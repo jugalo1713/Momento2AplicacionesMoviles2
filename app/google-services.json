@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "46614162228",
+    "firebase_url": "https://julianblog-82fb0.firebaseio.com",
+    "project_id": "julianblog-82fb0",
+    "storage_bucket": "julianblog-82fb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46614162228:android:390d2e1f03b430b45d5361",
+        "android_client_info": {
+          "package_name": "com.example.fotografos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46614162228-pu484raanb58r773d6n3g7trl8n13db7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fotografos",
+            "certificate_hash": "b98d4200d5c349bc23b931158ee640f0960b5f21"
+          }
+        },
+        {
+          "client_id": "46614162228-sr0f93visr3a7kokvi8939jp8alq1dr8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2lXkVnwts8E45_OLVrOoWH3wKCi00paU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "46614162228-sr0f93visr3a7kokvi8939jp8alq1dr8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
