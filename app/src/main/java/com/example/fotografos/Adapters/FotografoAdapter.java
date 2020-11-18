@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fotografos.R;
 import com.example.fotografos.model.Fotografos;
@@ -14,11 +15,11 @@ import java.util.ArrayList;
 
 public class FotografoAdapter extends BaseAdapter {
     private ArrayList<Fotografos> fotografo;
-    private Context context;
+    private Context contextLoc;
 
     public FotografoAdapter(ArrayList<Fotografos> fotografo, Context context) {
         this.fotografo = fotografo;
-        this.context = context;
+        this.contextLoc = context;
     }
 
 
@@ -41,8 +42,10 @@ public class FotografoAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null)
         {
-            LayoutInflater layoutInflater = LayoutInflater.from(context);
+            LayoutInflater layoutInflater = LayoutInflater.from(contextLoc);
             convertView = layoutInflater.inflate(R.layout.fofografosadapter, parent, false);
+
+
         }
 
         TextView tv_nombre = convertView.findViewById(R.id.tv_nombre);
