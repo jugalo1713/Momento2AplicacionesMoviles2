@@ -4,16 +4,28 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.fotografos.model.Fotografos;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText nombre, camara, nacionalidad, tipoFotografia;
     private String nombre_string, camara_string, nacionalidad_string, tipoFotografia_string;
+    String TAG = "JUL";
 
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +42,52 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
+
+      /*  // Create a new user with a first and last name
+        Map<String, Object> user = new HashMap<>();
+        user.put("first", "Ada");
+        user.put("last", "Lovelace");
+        user.put("born", 1815);
+
+// Add a new document with a generated ID
+        db.collection("users")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
+
+                /////////////////////
+                db.collection("users")
+        .get()
+        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Log.d(TAG, document.getId() + " => " + document.getData());
+                    }
+                } else {
+                    Log.w(TAG, "Error getting documents.", task.getException());
+                }
+            }
+        });
+
+
+
+
+                */
+
+
 
     }
 
@@ -56,7 +114,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Toast.makeText(this, "Agregado"+ camara_string, Toast.LENGTH_LONG).show();
+                        Fotografos fotografo = new Fotografos(camara_string, tipoFotografia_string, nacionalidad_string, nombre_string);
+
+                        Map<String, Object> fotografoA = new HashMap<>();
+                        fotografoA.put("nombre", fotografo.getNombre());
+                        fotografoA.put("camara", fotografo.getCamara());
+                        fotografoA.put("nacionalidad", fotografo.getNacionalidad());
+                        fotografoA.put("tipo_fotografia", fotografo.getTipoFotografia());
+
+                        db.collection("fotografos")
+                                .add(fotografoA);
+
+                        Toast.makeText(this, "Agregado", Toast.LENGTH_LONG).show();
                         limpiarCajas();
                     }
                 break;
@@ -105,4 +174,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    private void Registrar()
+    {
+
+    }
 }
+
+
+
