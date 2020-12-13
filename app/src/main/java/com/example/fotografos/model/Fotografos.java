@@ -6,12 +6,25 @@ public class Fotografos {
     private String tipoFotografia;
     private String nacionalidad;
     private String nombre;
+    private String fbId;
 
     public Fotografos(String camara, String tipoFotografia, String nacionalidad, String nombre) {
         this.camara = camara;
         this.tipoFotografia = tipoFotografia;
         this.nacionalidad = nacionalidad;
         this.nombre = nombre;
+    }
+
+
+    public Fotografos(String camara, String tipoFotografia, String nacionalidad, String nombre, String fbId) {
+        this.camara = camara;
+        this.tipoFotografia = tipoFotografia;
+        this.nacionalidad = nacionalidad;
+        this.nombre = nombre;
+        this.fbId = fbId;
+    }
+
+    public Fotografos() {
     }
 
     public String getNombre() {
@@ -46,7 +59,13 @@ public class Fotografos {
         this.nacionalidad = nacionalidad;
     }
 
+    public String getFbId() {
+        return fbId;
+    }
 
+    public void setFbId(String fbId) {
+        this.fbId = fbId;
+    }
 
 
 }

@@ -18,11 +18,10 @@
 
         >
         <ImageView
-            android:id="@+id/iv_list_profesores"
+            android:id="@+id/iv_list_fotografos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_add" />
+            app:srcCompat="@drawable/ic_account_circle_24px" />
             />
 
     </LinearLayout>
@@ -34,40 +33,107 @@
         android:padding="10dp"
         >
 
-            <TextView
-            android:id="@+id/tv_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre"
-            android:textColor="#000000"
-            >
-            </TextView>
-            <TextView
-            android:id="@+id/tv_camara"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Camara"
-            android:textColor="#000000"
-            >
-            </TextView>
-            <TextView
-            android:id="@+id/tv_tipoFotografia"
-                android:textColor="#000000"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tipo de Fotografía"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre:   "
+                    android:textColor="#75000000"
+
+                    >
+                </TextView>
+                <TextView
+                    android:id="@+id/tv_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    >
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cámara:  "
+                    android:textColor="#75000000"
+                    >
+                </TextView>
 
 
-            >
-            </TextView>
-            <TextView
-            android:id="@+id/tv_nacionalidad"
-                android:textColor="#000000"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="nacionalidad"
-            >
-            </TextView>
+                <TextView
+                    android:id="@+id/tv_camara"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    >
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+
+                    android:textColor="#75000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo fotografía:  "
+                    >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tv_tipoFotografia"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:textColor="#75000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nacionalidad:  "
+                    >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tv_nacionalidad"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                </TextView>
+
+            </LinearLayout>
+
+
+
+
+
 
 
     </LinearLayout>
