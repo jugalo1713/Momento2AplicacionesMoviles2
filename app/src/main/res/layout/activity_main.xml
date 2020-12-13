@@ -7,36 +7,10 @@
     android:orientation="vertical"
     tools:context=".MainActivity"
     android:padding="12dp"
+    android:weightSum="1"
     >
 
-    <EditText
-        android:id="@+id/et_nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Nombre">
-    </EditText>
-    <EditText
-        android:id="@+id/et_camara"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Cámara">
-    </EditText>
-    <EditText
-        android:id="@+id/et_nacionalidad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Nacionalidad">
-    </EditText>
-    <EditText
-        android:id="@+id/et_tipoFotografia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Tipo de Fotográfia">
-    </EditText>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,10 +21,28 @@
 
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/lv_listaPersonalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="559dp"
+        android:layout_weight="0.7"
         />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        >
+
+        <Button
+            android:id="@+id/btn_nuevo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear nuevo"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            ></Button>
+
+    </LinearLayout>
 
 
 </LinearLayout>

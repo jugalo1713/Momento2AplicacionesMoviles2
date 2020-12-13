@@ -44,8 +44,6 @@ public class FotografoAdapter extends BaseAdapter {
         {
             LayoutInflater layoutInflater = LayoutInflater.from(contextLoc);
             convertView = layoutInflater.inflate(R.layout.fofografosadapter, parent, false);
-
-
         }
 
         TextView tv_nombre = convertView.findViewById(R.id.tv_nombre);

@@ -33,7 +33,7 @@ public class detalle extends AppCompatActivity {
     private TextView id;
     private DocumentReference documentReference;
     private Fotografos fotografo;
-    private Button volver, actualizar;
+    private Button volver, actualizar, eliminar;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -50,6 +50,7 @@ public class detalle extends AppCompatActivity {
         id = findViewById(R.id.et_id_Detalle);
         volver = findViewById(R.id.btn_volver);
         actualizar = findViewById(R.id.btn_actualizar);
+        eliminar = findViewById(R.id.btn_eliminar);
 
 
         id_string = getIntent().getStringExtra("id");
@@ -73,6 +74,16 @@ public class detalle extends AppCompatActivity {
                 Actualizar();
             }
         });
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eliminar();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -175,6 +186,20 @@ public class detalle extends AppCompatActivity {
         }
 
     }
+
+
+    private void eliminar() {
+
+
+
+        DocumentReference documentReference = db.collection("fotografos").document(id_string);
+
+        documentReference.delete();
+        Toast.makeText(this, "Se ha eliminado exitosamente", Toast.LENGTH_SHORT).show();
+    }
+
+
+
 
 }
 
